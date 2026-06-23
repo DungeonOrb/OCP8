@@ -1,0 +1,2 @@
+Gerer les erreurs par example si la connexion au backend ne marche pas --> rediriger sur une autre page
+test unitaires

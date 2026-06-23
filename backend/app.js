@@ -1,3 +1,4 @@
+const cors = require("cors");
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -10,6 +11,14 @@ const authRouter = require('./routes/auth');
 const { initialize } = require('./db');
 
 const app = express();
+const corsOptions = {
+  origin: ["http://localhost:3000", "http://localhost:3001"],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
+app.options(/.*/, cors(corsOptions));
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -1,0 +1,136 @@
+.main {
+    min-height: calc(100vh - 174px);
+    background-color: #fbf7f4;
+    display: flex;
+    justify-content: center;
+    padding: 18px 24px 40px;
+}
+
+.card {
+    width: 100%;
+    max-width: 720px;
+    min-height: 735px;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 100%;
+    max-width: 350px;
+    padding-top: 78px;
+    text-align: center;
+}
+
+.title {
+    margin: 0 0 14px;
+    color: #96391f;
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.subtitle {
+    margin: 0 0 38px;
+    color: #111111;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.form {
+    width: 100%;
+}
+
+.field {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #111111;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.field input {
+    width: 100%;
+    height: 36px;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    background-color: #ffffff;
+    padding: 0 10px;
+    color: #111111;
+    outline: none;
+}
+
+.field input:focus {
+    border-color: #96391f;
+}
+
+.checkboxLine {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 4px 0 34px;
+    color: #666666;
+    font-size: 12px;
+    text-align: left;
+}
+
+.checkboxLine input {
+    width: 13px;
+    height: 13px;
+    margin: 0;
+    accent-color: #96391f;
+}
+
+.termsButton {
+    border: none;
+    background: none;
+    padding: 0;
+    color: #666666;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.error {
+    margin: -16px 0 18px;
+    color: #96391f;
+    font-size: 13px;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.submitButton {
+    width: 220px;
+    height: 34px;
+    border: none;
+    border-radius: 8px;
+    background-color: #96391f;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submitButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.loginText {
+    margin: 26px 0 0;
+    color: #96391f;
+    font-size: 13px;
+}
+
+.loginLink {
+    color: #96391f;
+    font-weight: 500;
+    text-decoration: none;
+}

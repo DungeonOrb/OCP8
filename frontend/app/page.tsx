@@ -22,7 +22,7 @@ export default async function HomePage() {
                     aria-label="Image de présentation"
                 />
 
-                <section className={styles.grid}>
+                <section id="logements" className={styles.grid}>
                     {properties.map((property) => (
                         <PropertyCard key={property.id} property={property} />
                     ))}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Property } from "@/types/property";
 import styles from "./styles/PropertyCard.module.css";
 
@@ -7,35 +8,41 @@ type PropertyCardProps = {
 
 export default function PropertyCard({ property }: PropertyCardProps) {
     return (
-        <article className={styles.card}>
-            <div className={styles.imageWrapper}>
-                {property.cover ? (
-                    <img
-                        className={styles.image}
-                        src={property.cover}
-                        alt={property.title}
-                    />
-                ) : (
-                    <div className={styles.imagePlaceholder} />
-                )}
+        <Link href={`/logements/${property.id}`} className={styles.card}>
+            <article>
+                <div className={styles.imageWrapper}>
+                    {property.cover ? (
+                        <img
+                            className={styles.image}
+                            src={property.cover}
+                            alt={property.title}
+                        />
+                    ) : (
+                        <div className={styles.imagePlaceholder} />
+                    )}
 
-                <button className={styles.favoriteButton} aria-label="Ajouter aux favoris">
-                    ♥
-                </button>
-            </div>
+                    <button
+                        className={styles.favoriteButton}
+                        type="button"
+                        aria-label="Ajouter aux favoris"
+                    >
+                        ♥
+                    </button>
+                </div>
 
-            <div className={styles.content}>
-                <h2 className={styles.title}>{property.title}</h2>
+                <div className={styles.content}>
+                    <h2 className={styles.title}>{property.title}</h2>
 
-                {property.location && (
-                    <p className={styles.location}>{property.location}</p>
-                )}
+                    {property.location && (
+                        <p className={styles.location}>{property.location}</p>
+                    )}
 
-                <p className={styles.price}>
-                    <strong>{property.price_per_night ?? 100}€</strong>{" "}
-                    <span>par nuit</span>
-                </p>
-            </div>
-        </article>
+                    <p className={styles.price}>
+                        <strong>{property.price_per_night ?? 100}€</strong>{" "}
+                        <span>par nuit</span>
+                    </p>
+                </div>
+            </article>
+        </Link>
     );
 }

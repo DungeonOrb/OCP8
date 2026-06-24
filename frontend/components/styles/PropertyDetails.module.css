@@ -1,0 +1,218 @@
+.main {
+    min-height: calc(100vh - 174px);
+    background-color: #fbf7f4;
+    padding: 118px 24px 110px;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin-bottom: 44px;
+    padding: 0 22px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    color: #555555;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.topSection {
+    display: grid;
+    grid-template-columns: 2fr 1.1fr;
+    gap: 14px;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1.4fr 1.4fr;
+    gap: 12px;
+    height: 380px;
+}
+
+.mainImageWrapper,
+.sideImageWrapper {
+    overflow: hidden;
+    background-color: #eeeeee;
+}
+
+.mainImageWrapper {
+    border-radius: 10px;
+}
+
+.sideImages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.sideImageWrapper {
+    border-radius: 10px;
+}
+
+.mainImage,
+.sideImage {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #eeeeee, #d6d6d6);
+}
+
+.hostCard {
+    min-height: 300px;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    padding: 28px 28px 26px;
+}
+
+.hostTitle {
+    margin: 0 0 28px;
+    color: #111111;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.hostInfo {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 26px;
+}
+
+.hostPicture,
+.hostPictureFallback {
+    width: 88px;
+    height: 88px;
+    border-radius: 8px;
+}
+
+.hostPicture {
+    object-fit: cover;
+}
+
+.hostPictureFallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #96391f;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.hostName {
+    flex: 1;
+    margin: 0;
+    color: #111111;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.rating {
+    min-width: 52px;
+    height: 40px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    color: #111111;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.star {
+    color: #96391f;
+}
+
+.hostButton {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #96391f;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hostButton+.hostButton {
+    margin-top: 10px;
+}
+
+.detailsCard {
+    width: calc((100% - 14px) * 0.645);
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    padding: 30px 28px 26px;
+}
+
+.title {
+    margin: 0 0 20px;
+    color: #111111;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.location {
+    margin: 0 0 34px;
+    color: #666666;
+    font-size: 16px;
+}
+
+.description {
+    margin: 0 0 44px;
+    color: #111111;
+    font-size: 17px;
+    line-height: 1.45;
+}
+
+.detailBlock {
+    margin-top: 42px;
+}
+
+.sectionTitle {
+    margin: 0 0 18px;
+    color: #111111;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+}
+
+.pill {
+    min-width: 110px;
+    height: 34px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    color: #666666;
+    font-size: 14px;
+}

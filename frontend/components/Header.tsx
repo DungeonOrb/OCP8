@@ -26,9 +26,9 @@ export default function Header() {
                         +Ajouter un logement
                     </button>
 
-                    <button className={styles.iconButton} type="button" aria-label="Favoris">
+                    <Link href="/favorites" className={styles.iconButton} aria-label="Favoris">
                         ♡
-                    </button>
+                    </Link>
 
                     <span className={styles.separator}>|</span>
 

@@ -1,0 +1,46 @@
+.main {
+    min-height: calc(100vh - 174px);
+    background-color: #fbf7f4;
+    padding: 98px 24px 90px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 82px;
+}
+
+.title {
+    margin: 0 0 18px;
+    color: #96391f;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin: 0;
+    color: #111111;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px 28px;
+}
+
+.message,
+.error {
+    text-align: center;
+    font-size: 16px;
+}
+
+.message {
+    color: #111111;
+}
+
+.error {
+    color: #96391f;
+}

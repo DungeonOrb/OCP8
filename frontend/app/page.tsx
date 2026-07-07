@@ -1,4 +1,4 @@
-import PropertyCard from "@/components/PropertyCard";
+import PropertyGrid from "@/components/PropertyGrid";
 import styles from "@/components/styles/Home.module.css";
 import { apiFetch } from "@/lib/api";
 import type { Property } from "@/types/property";
@@ -22,11 +22,7 @@ export default async function HomePage() {
                     aria-label="Image de présentation"
                 />
 
-                <section id="logements" className={styles.grid}>
-                    {properties.map((property) => (
-                        <PropertyCard key={property.id} property={property} />
-                    ))}
-                </section>
+                <PropertyGrid properties={properties} />
 
                 <section className={styles.howItWorks}>
                     <h2 className={styles.howItWorksTitle}>Comment ça marche ?</h2>

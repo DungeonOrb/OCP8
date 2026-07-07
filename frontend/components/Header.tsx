@@ -1,7 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import styles from "./styles/Header.module.css";
 
 export default function Header() {
+    const router = useRouter();
+
+    function handleLogout() {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+
+        router.push("/login");
+        router.refresh();
+    }
+
     return (
         <header className={styles.header}>
             <nav className={styles.nav} aria-label="Navigation principale">
@@ -10,9 +23,9 @@ export default function Header() {
                         Accueil
                     </Link>
 
-                    <button className={styles.navButton} type="button">
+                    <Link href="/details" className={styles.navLink}>
                         À propos
-                    </button>
+                    </Link>
                 </div>
 
                 <Link href="/" className={styles.logo} aria-label="Retour à l'accueil">
@@ -22,9 +35,9 @@ export default function Header() {
                 </Link>
 
                 <div className={styles.rightLinks}>
-                    <button className={styles.addButton} type="button">
+                    <Link href="/add-property" className={styles.addButton}>
                         +Ajouter un logement
-                    </button>
+                    </Link>
 
                     <Link href="/favorites" className={styles.iconButton} aria-label="Favoris">
                         ♡
@@ -34,6 +47,16 @@ export default function Header() {
 
                     <button className={styles.iconButton} type="button" aria-label="Profil">
                         ▭
+                    </button>
+
+                    <button
+                        className={styles.powerButton}
+                        type="button"
+                        aria-label="Se déconnecter"
+                        title="Se déconnecter"
+                        onClick={handleLogout}
+                    >
+                        ➜]
                     </button>
                 </div>
             </nav>

@@ -1,0 +1,93 @@
+.main {
+    min-height: calc(100vh - 174px);
+    background-color: #fbf7f4;
+    padding: 48px 24px 54px;
+}
+
+.header {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.title {
+    margin: 0 0 18px;
+    color: #96391f;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.intro {
+    margin: 0 auto 20px;
+    color: #111111;
+    font-size: 17px;
+    line-height: 1.45;
+}
+
+.heroImageWrapper {
+    max-width: 1180px;
+    height: 410px;
+    margin: 0 auto 46px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.contentSection {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.textBlock {
+    padding-top: 24px;
+}
+
+.missionTitle {
+    margin: 0 0 24px;
+    color: #96391f;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.missionList {
+    margin: 0 0 26px;
+    padding-left: 22px;
+    color: #111111;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.missionList li {
+    margin-bottom: 10px;
+}
+
+.highlight {
+    margin: 0;
+    color: #96391f;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.secondaryImageWrapper {
+    height: 450px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.secondaryImage {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}

@@ -1,25 +1,31 @@
 "use client";
 
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Property } from "@/types/property";
 import { apiFetchWithAuth } from "@/lib/api";
 import styles from "./styles/PropertyCard.module.css";
 
+
 type PropertyCardProps = {
     property: Property;
     isFavorite?: boolean;
+    onFavoriteAdded?: (propertyId: string | number) => void;
     onFavoriteRemoved?: (propertyId: string | number) => void;
 };
 
 export default function PropertyCard({
     property,
     isFavorite = false,
+    onFavoriteAdded,
     onFavoriteRemoved,
 }: PropertyCardProps) {
     const router = useRouter();
     const [favorite, setFavorite] = useState(isFavorite);
     const [isLoading, setIsLoading] = useState(false);
+    useEffect(() => {
+        setFavorite(isFavorite);
+    }, [isFavorite]);
 
     function goToProperty() {
         router.push(`/logements/${property.id}`);
@@ -59,6 +65,7 @@ export default function PropertyCard({
                 );
 
                 setFavorite(true);
+                onFavoriteAdded?.(property.id);
             }
         } catch (error) {
             console.error(error);

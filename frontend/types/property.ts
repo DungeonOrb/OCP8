@@ -11,11 +11,15 @@ export type Property = {
     ratings_count?: number;
     equipments?: string[];
     tags?: string[];
+
+    host_id?: number;
+
     host?: {
         id?: number;
         name?: string;
         picture?: string | null;
     };
+
     host_name?: string;
     host_picture?: string | null;
 };

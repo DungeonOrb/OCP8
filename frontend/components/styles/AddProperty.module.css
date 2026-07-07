@@ -1,0 +1,219 @@
+.main {
+    min-height: calc(100vh - 174px);
+    background-color: #fbf7f4;
+    padding: 46px 24px 72px;
+}
+
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.backButton {
+    height: 38px;
+    margin-bottom: 44px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 9px;
+    background-color: #f4f4f4;
+    color: #555555;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.pageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 42px;
+}
+
+.title {
+    margin: 0;
+    color: #111111;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.submitButton {
+    width: 98px;
+    height: 38px;
+    border: none;
+    border-radius: 9px;
+    background-color: #96391f;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submitButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.error {
+    margin: -22px 0 28px;
+    color: #96391f;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 18px;
+}
+
+.rightColumn {
+    display: grid;
+    gap: 18px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 9px;
+    padding: 72px 78px;
+}
+
+.rightColumn .card {
+    padding: 48px 78px;
+}
+
+.field {
+    margin-bottom: 22px;
+}
+
+.field:last-child {
+    margin-bottom: 0;
+}
+
+.field label,
+.customTagBlock label {
+    display: block;
+    margin-bottom: 8px;
+    color: #111111;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.field input,
+.field textarea,
+.customTagBlock input {
+    width: 100%;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #111111;
+    font-size: 14px;
+    outline: none;
+}
+
+.field input,
+.customTagBlock input {
+    height: 38px;
+    padding: 0 12px;
+}
+
+.field textarea {
+    min-height: 120px;
+    padding: 12px;
+    resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.customTagBlock input:focus {
+    border-color: #96391f;
+}
+
+.inlineInput {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.squareButton {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border: none;
+    border-radius: 7px;
+    background-color: #96391f;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.textAction {
+    margin-top: 10px;
+    border: none;
+    background: none;
+    padding: 0;
+    color: #96391f;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.smallInfo {
+    margin: 8px 0 0;
+    color: #666666;
+    font-size: 13px;
+}
+
+.sectionTitle {
+    margin: 0 0 24px;
+    color: #111111;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.checkboxGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 70px;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666666;
+    font-size: 14px;
+}
+
+.checkboxLabel input {
+    width: 13px;
+    height: 13px;
+    accent-color: #96391f;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tag {
+    min-width: 58px;
+    height: 32px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: #666666;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.tagActive {
+    background-color: #96391f;
+    color: #ffffff;
+}
+
+.customTagBlock {
+    margin-top: 18px;
+}

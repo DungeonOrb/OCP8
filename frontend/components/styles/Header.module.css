@@ -87,3 +87,17 @@
     font-size: 36px;
     transform: translateY(4px);
 }
+
+.powerButton {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #96391f;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.powerButton:hover {
+  opacity: 0.75;
+}

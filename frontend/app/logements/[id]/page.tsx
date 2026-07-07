@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import styles from "@/components/styles/PropertyDetails.module.css";
 import { apiFetch } from "@/lib/api";
 import type { Property } from "@/types/property";
+import HostActions from "@/components/HostActions";
 
 type PropertyDetailsPageProps = {
     params: Promise<{
@@ -94,13 +95,10 @@ export default async function PropertyDetailsPage({
                             </div>
                         </div>
 
-                        <button className={styles.hostButton} type="button">
-                            Contacter l'hôte
-                        </button>
-
-                        <button className={styles.hostButton} type="button">
-                            Envoyer un message
-                        </button>
+                        <HostActions
+                            propertyId={property.id}
+                            hostId={property.host?.id || property.host_id}
+                        />
                     </aside>
                 </section>
 

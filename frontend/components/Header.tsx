@@ -45,9 +45,9 @@ export default function Header() {
 
                     <span className={styles.separator}>|</span>
 
-                    <button className={styles.iconButton} type="button" aria-label="Profil">
+                    <Link href="/messages" className={styles.iconButton} aria-label="Messages">
                         ▭
-                    </button>
+                    </Link>
 
                     <button
                         className={styles.powerButton}

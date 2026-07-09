@@ -105,6 +105,12 @@ async function createProperty(db, payload) {
     err.status = 400; // to allow controller to map specific status
     throw err;
   }
+  if (host_id && host && host.picture) {
+  await db.runAsync(
+    'UPDATE users SET picture = ? WHERE id = ?',
+    [host.picture, resolvedHostId]
+  );
+}
 
   const newId = id || genId();
   const base = slugify(title);

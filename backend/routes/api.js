@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+const messages = require('../controllers/messagesController');
 const dbReady = require('../middlewares/dbReady');
 const { requireRole, requireAdmin, requireSelfOrAdmin, requireAuth } = require('../middlewares/auth');
 const properties = require('../controllers/propertiesController');
@@ -39,5 +40,11 @@ router.post('/uploads/image', requireRole(['owner','admin']), uploads.uploadImag
 
 // Delete one or multiple uploaded images by filename or URL
 router.delete('/uploads/images', requireRole(['owner','admin']), uploads.deleteImages);
+
+// Messages
+router.get('/conversations', requireAuth, messages.listConversations);
+router.post('/conversations', requireAuth, messages.createConversation);
+router.get('/conversations/:id/messages', requireAuth, messages.listMessages);
+router.post('/conversations/:id/messages', requireAuth, messages.createMessage);
 
 module.exports = router;

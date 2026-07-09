@@ -25,3 +25,7 @@ textarea,
 select {
     font: inherit;
 }
+body:has(.messages-page) header,
+body:has(.messages-page) footer {
+  display: none;
+}

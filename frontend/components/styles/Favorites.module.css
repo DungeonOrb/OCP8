@@ -44,3 +44,34 @@
 .error {
     color: #96391f;
 }
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .main {
+        padding: 44px 16px 54px;
+    }
+
+    .header {
+        margin-bottom: 40px;
+    }
+
+    .title {
+        margin-bottom: 20px;
+        font-size: 34px;
+        line-height: 1.1;
+    }
+
+    .subtitle {
+        max-width: 330px;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 1.35;
+    }
+
+    .grid {
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+}

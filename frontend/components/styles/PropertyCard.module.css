@@ -37,7 +37,7 @@
     border: none;
     border-radius: 8px;
     background-color: #ffffff;
-    color: #9a9a9a;
+    color: #545454;
     font-size: 16px;
     cursor: pointer;
     z-index: 2;
@@ -62,7 +62,7 @@
 
 .location {
     margin: 8px 0 36px;
-    color: #777777;
+    color: #525252;
     font-size: 14px;
 }
 
@@ -78,4 +78,43 @@
 
 .price span {
     color: #666666;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .card {
+        border-radius: 4px;
+    }
+
+    .imageWrapper {
+        height: 250px;
+    }
+
+    .favoriteButton {
+        top: 8px;
+        right: 8px;
+        width: 26px;
+        height: 26px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+
+    .content {
+        padding: 10px 12px 18px;
+    }
+
+    .title {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .location {
+        margin: 4px 0 22px;
+        font-size: 9px;
+    }
+
+    .price {
+        font-size: 9px;
+    }
 }

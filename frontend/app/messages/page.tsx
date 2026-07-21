@@ -71,8 +71,8 @@ export default function MessagesPage() {
 
                 if (conversationIdFromUrl) {
                     setSelectedConversationId(Number(conversationIdFromUrl));
-                } else if (data.length > 0) {
-                    setSelectedConversationId(data[0].id);
+                } else {
+                    setSelectedConversationId(null);
                 }
             } catch (err) {
                 setError(
@@ -140,7 +140,10 @@ export default function MessagesPage() {
     );
 
     return (
-        <main className={`${styles.main} messages-page`}>
+        <main
+            className={`${styles.main} messages-page ${selectedConversation ? styles.hasSelectedConversation : ""
+                }`}
+        >
             <aside className={styles.sidebar}>
                 <button
                     className={styles.backButton}
@@ -161,7 +164,10 @@ export default function MessagesPage() {
                                 : ""
                                 }`}
                             type="button"
-                            onClick={() => setSelectedConversationId(conversation.id)}
+                            onClick={() => {
+                                setSelectedConversationId(conversation.id);
+                                router.push(`/messages?conversationId=${conversation.id}`);
+                            }}
                         >
                             <div className={styles.avatar}>
                                 {conversation.other_user.picture ? (
@@ -193,6 +199,17 @@ export default function MessagesPage() {
             </aside>
 
             <section className={styles.chat}>
+                <button
+                    className={styles.mobileBackButton}
+                    type="button"
+                    onClick={() => {
+                        setSelectedConversationId(null);
+                        router.push("/messages");
+                    }}
+                >
+                    ← Retour
+                </button>
+
                 {error && <p className={styles.error}>{error}</p>}
 
                 {!selectedConversation && !error && (
@@ -251,14 +268,22 @@ export default function MessagesPage() {
                         </div>
 
                         <form className={styles.inputBar} onSubmit={handleSendMessage}>
+                            <label htmlFor="messageInput" className={styles.srOnly}>
+                                Message à envoyer
+                            </label>
+
                             <input
+                                id="messageInput"
+                                name="message"
                                 type="text"
                                 placeholder="Envoyer un message"
                                 value={newMessage}
                                 onChange={(event) => setNewMessage(event.target.value)}
                             />
 
-                            <button type="submit">↑</button>
+                            <button type="submit" aria-label="Envoyer le message">
+                                ↑
+                            </button>
                         </form>
                     </>
                 )}

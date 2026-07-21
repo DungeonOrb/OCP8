@@ -25,3 +25,20 @@
     color: #555555;
     font-size: 15px;
 }
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .footer {
+        height: 64px;
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .copyright {
+        font-size: 9px;
+    }
+}

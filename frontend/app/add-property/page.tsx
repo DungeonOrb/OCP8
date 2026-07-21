@@ -286,18 +286,25 @@ export default function AddPropertyPage() {
                             <section className={styles.card}>
                                 <div className={styles.field}>
                                     <label htmlFor="cover">Image de couverture</label>
+
                                     <div className={styles.inlineInput}>
+                                        <div className={styles.fakeFileInput}>
+                                            {coverFile ? coverFile.name : "Aucun fichier sélectionné"}
+                                        </div>
+
+                                        <label className={styles.squareButton} htmlFor="cover">
+                                            +
+                                        </label>
+
                                         <input
                                             id="cover"
+                                            className={styles.hiddenFileInput}
                                             type="file"
                                             accept="image/png,image/jpeg,image/webp"
                                             onChange={(event) => {
                                                 setCoverFile(event.target.files?.[0] ?? null);
                                             }}
                                         />
-                                        <button className={styles.squareButton} type="button">
-                                            +
-                                        </button>
                                     </div>
                                 </div>
 
@@ -305,8 +312,19 @@ export default function AddPropertyPage() {
                                     <label htmlFor="picture">Image du logement</label>
 
                                     <div className={styles.inlineInput}>
+                                        <div className={styles.fakeFileInput}>
+                                            {pictureFiles.length > 0
+                                                ? `${pictureFiles.length} image(s) sélectionnée(s)`
+                                                : "Aucun fichier sélectionné"}
+                                        </div>
+
+                                        <label className={styles.squareButton} htmlFor="picture">
+                                            +
+                                        </label>
+
                                         <input
                                             id="picture"
+                                            className={styles.hiddenFileInput}
                                             type="file"
                                             accept="image/png,image/jpeg,image/webp"
                                             multiple
@@ -314,19 +332,9 @@ export default function AddPropertyPage() {
                                                 setPictureFiles(Array.from(event.target.files ?? []));
                                             }}
                                         />
-
-                                        <button className={styles.squareButton} type="button">
-                                            +
-                                        </button>
                                     </div>
 
                                     <p className={styles.textAction}>+Ajouter une image</p>
-
-                                    {pictureFiles.length > 0 && (
-                                        <p className={styles.smallInfo}>
-                                            {pictureFiles.length} image(s) sélectionnée(s)
-                                        </p>
-                                    )}
                                 </div>
                             </section>
 
@@ -343,23 +351,28 @@ export default function AddPropertyPage() {
 
                                 <div className={styles.field}>
                                     <label htmlFor="hostPicture">Photo de profil</label>
+
                                     <div className={styles.inlineInput}>
+                                        <div className={styles.fakeFileInput}>
+                                            {hostPictureFile ? hostPictureFile.name : "Aucun fichier sélectionné"}
+                                        </div>
+
+                                        <label className={styles.squareButton} htmlFor="hostPicture">
+                                            +
+                                        </label>
+
                                         <input
                                             id="hostPicture"
+                                            className={styles.hiddenFileInput}
                                             type="file"
                                             accept="image/png,image/jpeg,image/webp"
                                             onChange={(event) => {
                                                 setHostPictureFile(event.target.files?.[0] ?? null);
                                             }}
                                         />
-                                        <button className={styles.squareButton} type="button">
-                                            +
-                                        </button>
                                     </div>
 
-                                    <button className={styles.textAction} type="button">
-                                        +Ajouter une image
-                                    </button>
+                                    <p className={styles.textAction}>+Ajouter une image</p>
                                 </div>
                             </section>
                         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { apiFetchWithAuth } from "@/lib/api";
 import styles from "@/components/styles/AddProperty.module.css";
@@ -69,6 +69,9 @@ export default function AddPropertyPage() {
     const [selectedEquipments, setSelectedEquipments] = useState<string[]>([]);
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
     const [customTag, setCustomTag] = useState("");
+    const coverInputRef = useRef<HTMLInputElement | null>(null);
+    const pictureInputRef = useRef<HTMLInputElement | null>(null);
+    const hostPictureInputRef = useRef<HTMLInputElement | null>(null);
 
     const [user, setUser] = useState<StoredUser | null>(null);
     const [error, setError] = useState("");
@@ -292,12 +295,18 @@ export default function AddPropertyPage() {
                                             {coverFile ? coverFile.name : "Aucun fichier sélectionné"}
                                         </div>
 
-                                        <label className={styles.squareButton} htmlFor="cover">
+                                        <button
+                                            className={styles.squareButton}
+                                            type="button"
+                                            aria-label="Sélectionner une image de couverture"
+                                            onClick={() => coverInputRef.current?.click()}
+                                        >
                                             +
-                                        </label>
+                                        </button>
 
                                         <input
                                             id="cover"
+                                            ref={coverInputRef}
                                             className={styles.hiddenFileInput}
                                             type="file"
                                             accept="image/png,image/jpeg,image/webp"
@@ -318,12 +327,18 @@ export default function AddPropertyPage() {
                                                 : "Aucun fichier sélectionné"}
                                         </div>
 
-                                        <label className={styles.squareButton} htmlFor="picture">
+                                        <button
+                                            className={styles.squareButton}
+                                            type="button"
+                                            aria-label="Sélectionner des images du logement"
+                                            onClick={() => pictureInputRef.current?.click()}
+                                        >
                                             +
-                                        </label>
+                                        </button>
 
                                         <input
                                             id="picture"
+                                            ref={pictureInputRef}
                                             className={styles.hiddenFileInput}
                                             type="file"
                                             accept="image/png,image/jpeg,image/webp"
@@ -357,12 +372,18 @@ export default function AddPropertyPage() {
                                             {hostPictureFile ? hostPictureFile.name : "Aucun fichier sélectionné"}
                                         </div>
 
-                                        <label className={styles.squareButton} htmlFor="hostPicture">
+                                        <button
+                                            className={styles.squareButton}
+                                            type="button"
+                                            aria-label="Sélectionner une photo de profil"
+                                            onClick={() => hostPictureInputRef.current?.click()}
+                                        >
                                             +
-                                        </label>
+                                        </button>
 
                                         <input
                                             id="hostPicture"
+                                            ref={hostPictureInputRef}
                                             className={styles.hiddenFileInput}
                                             type="file"
                                             accept="image/png,image/jpeg,image/webp"

@@ -238,25 +238,162 @@
 }
 
 .squareButton {
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
-  flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    flex: 0 0 38px;
 
-  border: none;
-  border-radius: 7px;
-  background-color: #96391f;
-  color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    background-color: #96391f;
+    color: #ffffff;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 2.7;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 2.7;
 
-  cursor: pointer;
-  user-select: none;
-  text-align: center;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .main {
+        padding: 26px 16px 28px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .backButton {
+        height: 36px;
+        margin-bottom: 34px;
+        padding: 0 18px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .pageHeader {
+        margin-bottom: 24px;
+    }
+
+    .title {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    .submitButton {
+        width: 96px;
+        height: 40px;
+        border-radius: 9px;
+        font-size: 14px;
+    }
+
+    .error {
+        margin: -8px 0 18px;
+        font-size: 14px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .rightColumn {
+        gap: 18px;
+    }
+
+    .card {
+        padding: 18px 16px;
+        border-radius: 9px;
+    }
+
+    .rightColumn .card {
+        padding: 18px 16px;
+    }
+
+    .field {
+        margin-bottom: 20px;
+    }
+
+    .field label,
+    .customTagBlock label {
+        margin-bottom: 8px;
+        font-size: 15px;
+    }
+
+    .field input,
+    .field textarea,
+    .customTagBlock input,
+    .fakeFileInput {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .field textarea {
+        min-height: 120px;
+        padding: 12px;
+    }
+
+    .inlineInput {
+        gap: 8px;
+    }
+
+    .squareButton {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        flex: 0 0 38px;
+        border-radius: 7px;
+        font-size: 26px;
+    }
+
+    .textAction {
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+    .sectionTitle {
+        margin-bottom: 22px;
+        font-size: 16px;
+    }
+
+    .checkboxGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 20px;
+    }
+
+    .checkboxLabel {
+        gap: 9px;
+        font-size: 14px;
+    }
+
+    .checkboxLabel input {
+        width: 13px;
+        height: 13px;
+    }
+
+    .tags {
+        gap: 8px;
+        margin-bottom: 22px;
+    }
+
+    .tag {
+        min-width: auto;
+        height: 34px;
+        padding: 0 16px;
+        border-radius: 5px;
+        font-size: 13px;
+    }
+
+    .customTagBlock {
+        margin-top: 22px;
+    }
 }
